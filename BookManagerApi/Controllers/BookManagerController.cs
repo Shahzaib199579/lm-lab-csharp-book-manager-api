@@ -54,5 +54,10 @@ namespace BookManagerApi.Controllers
             var result = _bookManagementService.DeleteBook(id);
             return NoContent();
         }
+        [HttpGet(), Route("NewMethod")]
+        public ActionResult<IEnumerable<Book>> NewMethod(long id)
+        {
+            return _bookManagementService.GetAllBooks();
+        }
     }
 }
